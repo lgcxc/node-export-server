@@ -3,6 +3,7 @@ const highexp = {};
 
 (function () {
   highexp.init = function () {
+    const apiPrefix = './';
     const options = document.getElementById('options');
     const format = document.getElementById('format');
     const width = document.getElementById('width');
@@ -58,7 +59,7 @@ const highexp = {};
         '<div class="info">Processing chart, please wait...</div>';
 
       ajax(
-        '/',
+        apiPrefix,
         toStructure(true),
         function (data) {
           const embed = document.createElement('embed');
@@ -98,7 +99,7 @@ const highexp = {};
 
     btnDownload.onclick = function () {
       ajax(
-        '/',
+        apiPrefix,
         toStructure(true),
         function (data) {
           const l = document.createElement('a');
